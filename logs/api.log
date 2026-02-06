@@ -1,0 +1,98 @@
+2026-02-06T15:15:43.011Z  INFO 5801 --- [main] c.f.assessment.demo.UserControllerTest   : Starting UserControllerTest using Java 21.0.9 with PID 5801 (started by jules in /app)
+2026-02-06T15:15:43.012Z DEBUG 5801 --- [main] c.f.assessment.demo.UserControllerTest   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-02-06T15:15:43.013Z  INFO 5801 --- [main] c.f.assessment.demo.UserControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-02-06T15:15:43.712Z  INFO 5801 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06T15:15:43.786Z  INFO 5801 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2026-02-06T15:15:44.219Z  INFO 5801 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-06T15:15:44.288Z  INFO 5801 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-02-06T15:15:44.321Z  INFO 5801 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-06T15:15:44.542Z  INFO 5801 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06T15:15:44.568Z  INFO 5801 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-06T15:15:44.796Z  INFO 5801 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-02-06T15:15:44.799Z  INFO 5801 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-06T15:15:45.624Z  INFO 5801 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06T15:15:45.659Z  INFO 5801 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:15:46.051Z  WARN 5801 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06T15:15:46.453Z DEBUG 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : Filter 'requestResponseLoggingFilter' configured for use
+2026-02-06T15:15:46.455Z  INFO 5801 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-02-06T15:15:46.455Z  INFO 5801 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-02-06T15:15:46.457Z  INFO 5801 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-02-06T15:15:46.478Z  INFO 5801 --- [main] c.f.assessment.demo.UserControllerTest   : Started UserControllerTest in 3.778 seconds (process running for 4.763)
+2026-02-06T15:15:47.227Z  INFO 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=POST; REQUEST URI=/api/users; REQUEST PAYLOAD={"name":"John Doe","email":"john@example.com"}; RESPONSE CODE=201; RESPONSE PAYLOAD={"id":1,"name":"John Doe","email":"john@example.com","lastAccessed":null}; TIME TAKEN=158ms
+2026-02-06T15:15:47.338Z  INFO 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=GET; REQUEST URI=/api/users/1; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=200; RESPONSE PAYLOAD={"id":1,"name":"John Doe","email":"john@example.com","lastAccessed":"2026-02-06T15:15:47.324124733"}; TIME TAKEN=52ms
+2026-02-06T15:15:47.349Z  INFO 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=PUT; REQUEST URI=/api/users/1; REQUEST PAYLOAD={"name":"Jane Doe","email":"john@example.com"}; RESPONSE CODE=200; RESPONSE PAYLOAD={"id":1,"name":"Jane Doe","email":"john@example.com","lastAccessed":"2026-02-06T15:15:47.324125"}; TIME TAKEN=6ms
+2026-02-06T15:15:47.460Z  INFO 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=GET; REQUEST URI=/api/users/paged; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=200; RESPONSE PAYLOAD={"content":[{"id":1,"name":"Jane Doe","email":"john@example.com","lastAccessed":"2026-02-06T15:15:47.324125"}],"pageable":{"pageNumber":0,"pageSize":10,"sort":{"sorted":false,"empty":true,"unsorted":true},"offset":0,"paged":true,"unpaged":false},"last":true,"totalPages":1,"totalElements":1,"first":true,"size":10,"number":0,"sort":{"sorted":false,"empty":true,"unsorted":true},"numberOfElements":1,"empty":false}; TIME TAKEN=108ms
+2026-02-06T15:15:47.875Z  INFO 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=GET; REQUEST URI=/api/external/posts/1; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=200; RESPONSE PAYLOAD={"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"}; TIME TAKEN=412ms
+2026-02-06T15:15:48.155Z  INFO 5801 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=DELETE; REQUEST URI=/api/users/1; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=204; RESPONSE PAYLOAD=[EMPTY]; TIME TAKEN=279ms
+2026-02-06T15:15:48.180Z  INFO 5801 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.farihim.assessment.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-06T15:15:48.188Z  INFO 5801 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.farihim.assessment.demo.DemoApplication for test class com.farihim.assessment.demo.DemoApplicationTests
+2026-02-06T15:15:48.245Z  INFO 5801 --- [main] c.f.a.demo.DemoApplicationTests          : Starting DemoApplicationTests using Java 21.0.9 with PID 5801 (started by jules in /app)
+2026-02-06T15:15:48.254Z DEBUG 5801 --- [main] c.f.a.demo.DemoApplicationTests          : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-02-06T15:15:48.254Z  INFO 5801 --- [main] c.f.a.demo.DemoApplicationTests          : No active profile set, falling back to 1 default profile: "default"
+2026-02-06T15:15:48.440Z  INFO 5801 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06T15:15:48.449Z  INFO 5801 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 JPA repository interface.
+2026-02-06T15:15:48.547Z  INFO 5801 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-06T15:15:48.549Z  INFO 5801 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-06T15:15:48.553Z  INFO 5801 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06T15:15:48.554Z  INFO 5801 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-06T15:15:48.556Z  INFO 5801 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2026-02-06T15:15:48.556Z  INFO 5801 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-06T15:15:48.594Z  INFO 5801 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06T15:15:48.599Z  INFO 5801 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:15:48.673Z  WARN 5801 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06T15:15:48.785Z  INFO 5801 --- [main] c.f.a.demo.DemoApplicationTests          : Started DemoApplicationTests in 0.583 seconds (process running for 7.071)
+2026-02-06T15:15:48.839Z  INFO 5801 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:15:48.847Z  INFO 5801 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-06T15:15:48.849Z  INFO 5801 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-06T15:15:48.852Z  INFO 5801 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:15:48.853Z  INFO 5801 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-02-06T15:15:48.854Z  INFO 5801 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-02-06T15:17:23.993Z  INFO 7183 --- [main] c.f.assessment.demo.UserControllerTest   : Starting UserControllerTest using Java 21.0.9 with PID 7183 (started by jules in /app)
+2026-02-06T15:17:23.995Z DEBUG 7183 --- [main] c.f.assessment.demo.UserControllerTest   : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-02-06T15:17:23.996Z  INFO 7183 --- [main] c.f.assessment.demo.UserControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-02-06T15:17:24.896Z  INFO 7183 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06T15:17:25.035Z  INFO 7183 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 1 JPA repository interface.
+2026-02-06T15:17:25.598Z  INFO 7183 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-06T15:17:25.683Z  INFO 7183 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-02-06T15:17:25.720Z  INFO 7183 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-06T15:17:25.967Z  INFO 7183 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06T15:17:25.997Z  INFO 7183 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-06T15:17:26.260Z  INFO 7183 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-02-06T15:17:26.265Z  INFO 7183 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-06T15:17:27.257Z  INFO 7183 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06T15:17:27.295Z  INFO 7183 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:17:27.734Z  WARN 7183 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06T15:17:28.280Z DEBUG 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : Filter 'requestResponseLoggingFilter' configured for use
+2026-02-06T15:17:28.283Z  INFO 7183 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-02-06T15:17:28.283Z  INFO 7183 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-02-06T15:17:28.285Z  INFO 7183 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-02-06T15:17:28.321Z  INFO 7183 --- [main] c.f.assessment.demo.UserControllerTest   : Started UserControllerTest in 4.697 seconds (process running for 5.781)
+2026-02-06T15:17:29.453Z  INFO 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=POST; REQUEST URI=/api/users; REQUEST PAYLOAD={"name":"John Doe","email":"john@example.com"}; RESPONSE CODE=201; RESPONSE PAYLOAD={"id":1,"name":"John Doe","email":"john@example.com","lastAccessed":null}; TIME TAKEN=246ms
+2026-02-06T15:17:29.638Z  INFO 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=GET; REQUEST URI=/api/users/1; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=200; RESPONSE PAYLOAD={"id":1,"name":"John Doe","email":"john@example.com","lastAccessed":"2026-02-06T15:17:29.613499421"}; TIME TAKEN=86ms
+2026-02-06T15:17:29.658Z  INFO 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=PUT; REQUEST URI=/api/users/1; REQUEST PAYLOAD={"name":"Jane Doe","email":"john@example.com"}; RESPONSE CODE=200; RESPONSE PAYLOAD={"id":1,"name":"Jane Doe","email":"john@example.com","lastAccessed":"2026-02-06T15:17:29.613499"}; TIME TAKEN=10ms
+2026-02-06T15:17:29.786Z  INFO 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=GET; REQUEST URI=/api/users/paged; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=200; RESPONSE PAYLOAD={"content":[{"id":1,"name":"Jane Doe","email":"john@example.com","lastAccessed":"2026-02-06T15:17:29.613499"}],"pageable":{"pageNumber":0,"pageSize":10,"sort":{"sorted":false,"empty":true,"unsorted":true},"offset":0,"paged":true,"unpaged":false},"last":true,"totalPages":1,"totalElements":1,"first":true,"size":10,"number":0,"sort":{"sorted":false,"empty":true,"unsorted":true},"numberOfElements":1,"empty":false}; TIME TAKEN=123ms
+2026-02-06T15:17:30.241Z  INFO 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=GET; REQUEST URI=/api/external/posts/1; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=200; RESPONSE PAYLOAD={"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"}; TIME TAKEN=453ms
+2026-02-06T15:17:30.539Z  INFO 7183 --- [main] c.f.a.d.c.RequestResponseLoggingFilter   : FINISHED PROCESSING : METHOD=DELETE; REQUEST URI=/api/users/1; REQUEST PAYLOAD=[EMPTY]; RESPONSE CODE=204; RESPONSE PAYLOAD=[EMPTY]; TIME TAKEN=296ms
+2026-02-06T15:17:30.561Z  INFO 7183 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.farihim.assessment.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-06T15:17:30.563Z  INFO 7183 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.farihim.assessment.demo.DemoApplication for test class com.farihim.assessment.demo.DemoApplicationTests
+2026-02-06T15:17:30.589Z  INFO 7183 --- [main] c.f.a.demo.DemoApplicationTests          : Starting DemoApplicationTests using Java 21.0.9 with PID 7183 (started by jules in /app)
+2026-02-06T15:17:30.589Z DEBUG 7183 --- [main] c.f.a.demo.DemoApplicationTests          : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-02-06T15:17:30.590Z  INFO 7183 --- [main] c.f.a.demo.DemoApplicationTests          : No active profile set, falling back to 1 default profile: "default"
+2026-02-06T15:17:30.761Z  INFO 7183 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06T15:17:30.770Z  INFO 7183 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interface.
+2026-02-06T15:17:30.864Z  INFO 7183 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-06T15:17:30.866Z  INFO 7183 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-06T15:17:30.871Z  INFO 7183 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06T15:17:30.871Z  INFO 7183 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-06T15:17:30.873Z  INFO 7183 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2026-02-06T15:17:30.873Z  INFO 7183 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-06T15:17:30.911Z  INFO 7183 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06T15:17:30.915Z  INFO 7183 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:17:30.990Z  WARN 7183 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06T15:17:31.103Z  INFO 7183 --- [main] c.f.a.demo.DemoApplicationTests          : Started DemoApplicationTests in 0.536 seconds (process running for 8.564)
+2026-02-06T15:17:31.160Z  INFO 7183 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:17:31.164Z  INFO 7183 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-06T15:17:31.170Z  INFO 7183 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-06T15:17:31.173Z  INFO 7183 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06T15:17:31.174Z  INFO 7183 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-02-06T15:17:31.176Z  INFO 7183 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
