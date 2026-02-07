@@ -23,6 +23,7 @@ public class AuditLogService {
     public void logUserCreation(UUID userId, String email) {
         try {
             AuditLog auditLog = AuditLog.builder()
+                    .id(UUID.randomUUID())
                     .action("USER_CREATED")
                     .userId(userId)
                     .details("User created with email: " + email)
@@ -46,6 +47,7 @@ public class AuditLogService {
             );
 
             AuditLog auditLog = AuditLog.builder()
+                    .id(UUID.randomUUID())
                     .action("USER_UPDATED")
                     .userId(userId)
                     .details(details)
@@ -63,6 +65,7 @@ public class AuditLogService {
     public void logUserDeletion(UUID userId, String email) {
         try {
             AuditLog auditLog = AuditLog.builder()
+                    .id(UUID.randomUUID())
                     .action("USER_DELETED")
                     .userId(userId)
                     .details("User deleted with email: " + email)

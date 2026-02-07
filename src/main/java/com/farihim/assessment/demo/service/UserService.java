@@ -29,6 +29,7 @@ public class UserService {
     @Transactional
     public UserResponse createUser(UserRequest request) {
         User user = User.builder()
+                .id(UUID.randomUUID())
                 .name(request.getName())
                 .email(request.getEmail())
                 .build();
