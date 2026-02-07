@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final AuditLogService auditLogService;
 
     @Transactional
     public UserResponse createUser(UserRequest request) {
@@ -32,17 +33,18 @@ public class UserService {
                 .email(request.getEmail())
                 .build();
         User savedUser = userRepository.save(user);
+
+        auditLogService.logUserCreation(savedUser.getId(), savedUser.getEmail());
+
         return mapToResponse(savedUser);
     }
 
-    @Transactional(readOnly = true)
     public List<UserResponse> getAllUsers() {
         return userRepository.findAll().stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
     }
 
-    @Transactional(readOnly = true)
     public Page<UserResponse> getAllUsersPaged(int page, int size, String sortBy, String sortDir) {
         Set<String> allowedFields = Set.of("id", "name", "email", "lastAccessed");
         if (!allowedFields.contains(sortBy)) {
@@ -56,10 +58,10 @@ public class UserService {
                 .map(this::mapToResponse);
     }
 
-
     @Transactional
     public UserResponse getUserById(UUID id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
 
         user.setLastAccessed(LocalDateTime.now());
         userRepository.save(user);
@@ -69,20 +71,37 @@ public class UserService {
 
     @Transactional
     public UserResponse updateUser(UUID id, UserRequest request) {
-        User user = userRepository.findById(id).orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
+
+        String oldName = user.getName();
+        String oldEmail = user.getEmail();
 
         user.setName(request.getName());
         user.setEmail(request.getEmail());
 
         User updatedUser = userRepository.save(user);
+
+        // Log the update - this will commit independently
+        auditLogService.logUserUpdate(
+                updatedUser.getId(),
+                oldName,
+                oldEmail,
+                updatedUser.getName(),
+                updatedUser.getEmail()
+        );
+
         return mapToResponse(updatedUser);
     }
 
     @Transactional
     public void deleteUser(UUID id) {
-        if (!userRepository.existsById(id)) {
-            throw new NoSuchElementException("User not found with id: " + id);
-        }
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
+
+        // Log deletion before actually deleting
+        auditLogService.logUserDeletion(user.getId(), user.getEmail());
+
         userRepository.deleteById(id);
     }
 
