@@ -1,4 +1,4 @@
-package com.farihim.assessment.demo.config;
+package com.farihim.assessment.demo.common.logging;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

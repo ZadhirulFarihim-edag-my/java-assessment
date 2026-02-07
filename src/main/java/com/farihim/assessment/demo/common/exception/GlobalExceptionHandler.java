@@ -1,4 +1,4 @@
-package com.farihim.assessment.demo.exception;
+package com.farihim.assessment.demo.common.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

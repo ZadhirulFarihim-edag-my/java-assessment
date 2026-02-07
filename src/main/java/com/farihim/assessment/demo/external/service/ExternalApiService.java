@@ -1,4 +1,4 @@
-package com.farihim.assessment.demo.service;
+package com.farihim.assessment.demo.external.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

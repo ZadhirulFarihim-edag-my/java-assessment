@@ -1,9 +1,9 @@
-package com.farihim.assessment.demo.service;
+package com.farihim.assessment.demo.user.service;
 
-import com.farihim.assessment.demo.dto.UserRequest;
-import com.farihim.assessment.demo.dto.UserResponse;
-import com.farihim.assessment.demo.model.User;
-import com.farihim.assessment.demo.repository.UserRepository;
+import com.farihim.assessment.demo.user.dto.UserRequest;
+import com.farihim.assessment.demo.user.dto.UserResponse;
+import com.farihim.assessment.demo.user.model.User;
+import com.farihim.assessment.demo.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -43,19 +43,12 @@ public class UserService {
                 .map(this::mapToResponse);
     }
 
-    /**
-     * Use case for @Transactional on a GET method:
-     * When we retrieve a user, we also want to update their last accessed timestamp.
-     */
     @Transactional
     public UserResponse getUserById(Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
-        // Update last accessed timestamp
         user.setLastAccessed(LocalDateTime.now());
-        // No need to call save() manually due to transactional dirty checking,
-        // but calling it doesn't hurt and makes it explicit.
         userRepository.save(user);
 
         return mapToResponse(user);

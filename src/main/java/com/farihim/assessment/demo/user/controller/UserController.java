@@ -1,8 +1,8 @@
-package com.farihim.assessment.demo.controller;
+package com.farihim.assessment.demo.user.controller;
 
-import com.farihim.assessment.demo.dto.UserRequest;
-import com.farihim.assessment.demo.dto.UserResponse;
-import com.farihim.assessment.demo.service.UserService;
+import com.farihim.assessment.demo.user.dto.UserRequest;
+import com.farihim.assessment.demo.user.dto.UserResponse;
+import com.farihim.assessment.demo.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

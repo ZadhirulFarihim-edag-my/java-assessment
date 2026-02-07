@@ -1,4 +1,4 @@
-package com.farihim.assessment.demo.dto;
+package com.farihim.assessment.demo.user.dto;
 
 import lombok.Data;
 

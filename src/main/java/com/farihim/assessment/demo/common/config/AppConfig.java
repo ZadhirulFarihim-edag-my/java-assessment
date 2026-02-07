@@ -1,4 +1,4 @@
-package com.farihim.assessment.demo.config;
+package com.farihim.assessment.demo.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

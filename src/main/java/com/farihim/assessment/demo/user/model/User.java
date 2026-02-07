@@ -1,4 +1,4 @@
-package com.farihim.assessment.demo.model;
+package com.farihim.assessment.demo.user.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

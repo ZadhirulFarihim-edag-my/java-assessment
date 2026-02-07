@@ -1,7 +1,7 @@
 package com.farihim.assessment.demo;
 
-import com.farihim.assessment.demo.dto.UserRequest;
-import com.farihim.assessment.demo.dto.UserResponse;
+import com.farihim.assessment.demo.user.dto.UserRequest;
+import com.farihim.assessment.demo.user.dto.UserResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

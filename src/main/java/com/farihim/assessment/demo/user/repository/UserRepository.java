@@ -1,6 +1,6 @@
-package com.farihim.assessment.demo.repository;
+package com.farihim.assessment.demo.user.repository;
 
-import com.farihim.assessment.demo.model.User;
+import com.farihim.assessment.demo.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

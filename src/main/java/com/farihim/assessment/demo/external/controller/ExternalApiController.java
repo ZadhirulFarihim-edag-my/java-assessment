@@ -1,6 +1,6 @@
-package com.farihim.assessment.demo.controller;
+package com.farihim.assessment.demo.external.controller;
 
-import com.farihim.assessment.demo.service.ExternalApiService;
+import com.farihim.assessment.demo.external.service.ExternalApiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
