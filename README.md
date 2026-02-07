@@ -35,7 +35,8 @@ C:\ZadWorkspace\Assessment
 |   |   |   |   |   |   |   |-- validator
 |   |   |   |-- resources
 |   |   |   |-- application.properties
-|   |   |   |-- data.sql
+|   |   |   |-- db
+|   |   |   |   |-- flyway
 |   |-- test
 |   |   |-- java
 |   |   |   |-- com
